@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+int rang(char r, char * cr) {
+	for(int i = 0; i < 7; i++) if(cr[i] == r) return i;
+}
+
+int r2a (char * r, char * cr, int * vcr) {
+   int a, length = strlen(r);
+   int der = 0, rg, v;
+
+   for(int i = length - 1; i >= 0; i--) {
+	   rg = rang(r[i], cr);
+	   v = vcr[rg];
+
+	   if(v >= der) {
+		   a += v;
+		   der = v;
+	   } else {
+		   a -= v;
+	   }
+   }
+
+   return a;
+}
+
+int main() {
+	char cr[] = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+	int vcr[] = {1, 5, 10, 50, 100, 500, 1000};
+	char r[100];
+	int arabe;
+
+	printf("n ? ");
+	scanf("%s", r);
+
+	arabe = r2a(r, cr, vcr);
+
+	printf("valeur decimale : %d\n", arabe);
+
+	return(0);
+}
