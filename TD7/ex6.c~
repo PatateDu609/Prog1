@@ -28,8 +28,8 @@ bool verify(char * r, char * cr, int * vcr) {
 	int length = strlen(r);
    	int rg = -1, rg1 = -1;
 	
-	for(int i = length - 2, rg = rang(r[length - 1], cr, vcr); i >= 0; i++) {
-		rg1 = rang()
+	for(int i = length - 2, rg = rang(length - 1, cr, vcr); i >= 0; i++) {
+		
 	}
 	
 	return true;
